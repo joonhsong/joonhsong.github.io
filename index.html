@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JS Group</title>
+        <title>JSGroup</title>
         <meta http-equiv='cache-control' content='no-cache'> 
         <meta http-equiv='expires' content='0'> 
         <meta http-equiv='pragma' content='no-cache'>
-
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -16,9 +15,21 @@
 
             .header {
                 background-color: #333;
-                color: yellow;
+                color: white;
                 padding: 10px;
                 text-align: center;
+            }
+
+            .nav {
+                background-color: #ddd;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .nav a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: black;
             }
 
             .main {
@@ -38,14 +49,25 @@
     </head>
     <body>
         <div class="header">
-            <h1>Welcome to the JS Group</h1>
+            <h1>Welcome to JSGroup</h1>
+        </div>
+        <div class="nav">
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact Us</a>
         </div>
         <div class="main">
-            <h2>Message from CEO</h2>
-            <p>Hello! My name is Joon Song, the CEO and the founder of JS Group. Thank you for your interest in the JS Group. We are a world leading technology company with limitless opportunities. Stay tuned for more info to come!</p>
+            <h2 id="about">About Us</h2>
+            <p>JSGroup is a leading company in providing exceptional JavaScript solutions. We specialize in building efficient, scalable, and robust JavaScript applications.</p>
+            
+            <h2 id="services">Our Services</h2>
+            <p>We offer a wide range of JavaScript development services including web application development, mobile application development, and JavaScript consulting.</p>
+            
+            <h2 id="contact">Contact Us</h2>
+            <p>Interested in our services? Reach out to us at info@js-group.com or call us at 123-456-7890.</p>
         </div>
         <div class="footer">
-            <p>&copy; JS Group 2023</p>
+            <p>&copy; 2023 JSGroup</p>
         </div>
     </body>
 </html>
