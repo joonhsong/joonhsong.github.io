@@ -1,120 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>JSGroup</title>
-        <meta http-equiv='cache-control' content='no-cache'> 
-        <meta http-equiv='expires' content='0'> 
-        <meta http-equiv='pragma' content='no-cache'>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f0f0f0;
-            }
-
-            .header {
-                background-color: #333;
-                color: yellow;
-                padding: 40px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .nav {
-                background-color: #ddd;
-                padding: 10px;
-                margin-right: 20px;
-            }
-
-            .nav a {
-                margin: 0 10px;
-                text-decoration: none;
-                color: black;
-            }
-
-            .main {
-                padding: 20px;
-            }
-
-            .footer {
-                background-color: #333;
-                color: white;
-                text-align: center;
-                padding: 10px;
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-            }
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-
-            .dropdown-content a {
-                color: black;
-                padding: 12px 12px;
-                text-decoration: none;
-                display: block;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .dropbtn {
-                background-color: #333;
-                color: white;
-                padding: 20px;
-                font-size: 20px;
-                border: none;
-                cursor: pointer;
-                outline: none;
-            }
-            .dropbtn:focus {
-                background-color: #555;
-            }
-
-
-        </style>
-    </head>
-    <body>
-        <div class="header">
-            <h1>JS Group</h1>
-            <div class="nav">
+<head>
+    <title>JS Group</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: white;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(177, 13, 222);
+        }
+        .header .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-menu .nav-item {
+            position: relative;
+        }
+        .nav-item .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            white-space: nowrap;
+            background-color: #f8f9fa;
+            padding: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+        .nav-item:hover .dropdown {
+            display: block;
+        }
+        .nav-item .dropdown a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        padding: 5px 0;
+        }
+        .nav-item .dropdown a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">JS Group</div>
+        <div class="nav-menu">
+            <div class="nav-item">
+                About Us
                 <div class="dropdown">
-                    <button class="dropbtn">MENU</button>
-                    <div class="dropdown-content">
-                        <a href="#about">About Us</a>
-                        <a href="#services">Our Services</a>
-                        <a href="#contact">Contact Us</a>
-                    </div>
+                    <div>CEO</div>
+                    <div>What We Do</div>
+                </div>
+            </div>
+            <div class="nav-item">
+                Companies
+                <div class="dropdown">
+                    <a href="jsfintech.html">JS Fintech</a>
+                    <a href="jsmobile.html">JS Mobile</a>
+                    <a href="jsgames.html">JS Games</a>
+                    <a href="jsconstruction.html">JS Construction</a>
+                    <a href="treyelidstudio.html">Treyelid Studio</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                Careers
+                <div class="dropdown">
+                    <!-- Empty for now -->
                 </div>
             </div>
         </div>
-        
-        <div class="main">
-            <h2 id="about">About Us</h2>
-            <p>JSGroup is a leading company in providing exceptional application solutions. We specialize in building efficient, scalable, and robust iOS/Andriod applications.</p>
-            
-            <h2 id="services">Our Services</h2>
-            <p>We offer a wide range of development services including web application development, mobile application development, and consulting.</p>
-            
-            <h2 id="contact">Contact Us</h2>
-            <p>Interested in our services? Reach out to us at js30@illinois.edu.</p>
-        </div>
-        <div class="footer">
-            <p>&copy; 2023 JSGroup</p>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
