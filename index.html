@@ -10,12 +10,12 @@
             display: flex;
             justify-content: space-between;
             padding: 20px;
-            background-color: white;
+            background-color: rgb(250, 249, 249);
         }
         .header .logo {
             font-size: 24px;
             font-weight: bold;
-            color: rgb(177, 13, 222);
+            color: rgb(241, 124, 22);
         }
         .header .nav-menu {
             display: flex;
@@ -38,14 +38,25 @@
             display: block;
         }
         .nav-item .dropdown a {
-        display: block;
-        text-decoration: none;
-        color: black;
-        padding: 5px 0;
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 5px 0;
         }
         .nav-item .dropdown a:hover {
             background-color: #ddd;
         }
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -74,5 +85,8 @@
             </div>
         </div>
     </div>
+    <div class="footer">
+        <p>© 2023 JS Group. All rights reserved.</p>
+    </div>    
 </body>
 </html>
