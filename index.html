@@ -43,6 +43,7 @@
       [data-reveal].visible { opacity: 1; transform: translateY(0); }
       .no-scrollbar::-webkit-scrollbar { display: none; }
       .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .status-dot { display:inline-block; width:8px; height:8px; border-radius:9999px; margin-right:8px; }
     </style>
   </head>
   <body class="bg-base-950 text-base-100 font-sans antialiased selection:bg-primary/20 selection:text-white">
@@ -76,6 +77,7 @@
             <a class="hover:text-white/90 text-white/70" href="#about">About</a>
             <a class="hover:text-white/90 text-white/70" href="#quant">My Work</a>
             <a class="hover:text-white/90 text-white/70" href="#chat">Chat</a>
+            <a class="hover:text-white/90 text-white/70" href="#clone">My Clone</a>
             <a class="hover:text-white/90 text-white/70" href="#contact">Contact</a>
           </nav>
           <div class="flex items-center gap-2">
@@ -95,8 +97,8 @@
               <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">with a focus on AI and Quant.</span>
             </h1>
             <p class="mt-6 text-lg text-white/70 max-w-2xl">
-              I'm <span class="font-semibold text-white">Joon Song</span> — a software engineer working across ML, Backend Dev, AI Agent, and
-              Quant trading. I like shipping things that feel simple on the surface and solid underneath.
+              I'm <span class="font-semibold text-white">Joon Song</span> — a software engineer working across ML, Backend systems, and Quant Trading.
+              I like shipping things that feel simple on the surface and solid underneath.
             </p>
             <div class="mt-8 flex flex-wrap gap-3">
               <a href="#about" class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-base font-semibold ring-1 ring-white/10 bg-white/10 hover:bg-white/20 shadow-glass">
@@ -130,10 +132,10 @@
           </div>
           <div class="lg:col-span-7" data-reveal>
             <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">About me</h2>
-            <p class="mt-4 text-white/70">Engineer with experience across ML, Backend Dev, and product. Previously worked on computer vision systems, ML trading strategies, and modern web apps. Currently focusing on robust, data‑driven, AI agentic trading and scalable serving.</p>
+            <p class="mt-4 text-white/70">Engineer with experience across ML, systems, and product. Previously worked on computer vision systems, ML trading strategies, and modern web apps. Currently focusing on robust, AI data‑driven trading and scalable serving.</p>
             <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-white/80 text-sm">
-              <li class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-3">Python, PyTorch, XGBoost</li>
-              <li class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-3">Typescript, Next.js, MongoDB</li>
+              <li class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-3">Python, PyTorch, C/C++, x86, System Verilog</li>
+              <li class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-3">Typescript, Next.js, MongoDB, AWS</li>
               <li class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-3">OpenCV, FastAPI, CUDA</li>
               <li class="rounded-xl bg-white/5 ring-1 ring-white/10 px-4 py-3">GCP, SQL, Linux</li>
             </ul>
@@ -145,7 +147,7 @@
       <section id="quant" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div class="max-w-2xl" data-reveal>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Quant crypto trading</h2>
-          <p class="mt-3 text-white/70">Researching and deploying strategies on 15‑minute bars with risk controls and live monitoring. I use ML Models with engineered features and strict execution rules. I am planning to build AI Trading Agents.</p>
+          <p class="mt-3 text-white/70">Researching and deploying systematic strategies with risk controls and live monitoring. I use ML models with engineered features and strict execution rules.</p>
         </div>
         <div class="mt-8 grid md:grid-cols-3 gap-4" data-reveal>
           <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 p-6">
@@ -176,7 +178,7 @@
         </div>
       </section>
 
-      <!-- Chatbot (Interactive) -->
+      <!-- Chatbot (Interactive, local demo) -->
       <section id="chat" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div class="max-w-2xl" data-reveal>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Chat with me (demo)</h2>
@@ -212,11 +214,58 @@
         </div>
       </section>
 
+      <!-- Clone LLM (Backend‑connected) -->
+      <section id="clone" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-2xl" data-reveal>
+          <div class="flex items-center gap-3">
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Talk to my clone LLM</h2>
+            <span id="cloneStatus" class="text-xs px-2 py-1 rounded-full ring-1 ring-white/10 bg-white/5 text-white/70 flex items-center gap-2">
+              <span id="cloneDot" class="status-dot bg-red-400/80"></span>
+              <span id="cloneLabel">Checking…</span>
+            </span>
+          </div>
+          <p class="mt-3 text-white/70">This section connects to my backend LLM. It's not always on to save costs. When the server is off, you'll see a friendly heads‑up. When it's on, you can chat in real time.</p>
+        </div>
+
+        <!-- Offline notice -->
+        <div id="cloneOffline" class="mt-8 rounded-3xl ring-1 ring-white/10 bg-white/5 p-6 hidden" data-reveal>
+          <h3 class="font-semibold">Server is sleeping 💤</h3>
+          <p class="mt-2 text-white/70">Come back later to chat with me, or ping me and I'll spin it up. You can also try refreshing in a bit.</p>
+          <div class="mt-4 flex items-center gap-3">
+            <button id="retryCheck" class="rounded-xl bg-white/10 hover:bg-white/20 ring-1 ring-white/10 px-4 py-2 text-sm">Retry</button>
+            <a href="#contact" class="text-sm underline text-white/80">Contact me</a>
+          </div>
+        </div>
+
+        <!-- Online chat UI -->
+        <div id="cloneOnline" class="mt-8 grid lg:grid-cols-2 gap-6 hidden" data-reveal>
+          <div class="rounded-3xl ring-1 ring-white/10 bg-white/5 p-0 overflow-hidden shadow-glass">
+            <div class="px-4 py-3 border-b border-white/10 text-sm font-medium flex items-center justify-between">
+              <span>My Clone LLM</span>
+              <button id="clearClone" class="text-xs rounded-lg px-2 py-1 ring-1 ring-white/10 hover:bg-white/10">Clear</button>
+            </div>
+            <div id="cloneLog" class="h-72 overflow-y-auto p-4 space-y-3 text-sm no-scrollbar"></div>
+            <form id="cloneForm" class="p-3 border-t border-white/10 flex items-center gap-2">
+              <input id="cloneInput" class="flex-1 rounded-xl bg-white/10 ring-1 ring-white/10 px-3 py-2 placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/30" placeholder="Ask me anything…" required />
+              <button class="rounded-xl bg-white/10 hover:bg-white/20 ring-1 ring-white/10 px-4 py-2 text-sm">Send</button>
+            </form>
+          </div>
+          <div class="rounded-3xl ring-1 ring-white/10 bg-white/5 p-6">
+            <h3 class="font-semibold">API details</h3>
+            <ul class="mt-3 space-y-2 text-sm text-white/80">
+              <li><code>GET /health</code> → 200 OK when online</li>
+              <li><code>POST /chat</code> → <code>{ reply: string }</code> (non‑streaming, simple)</li>
+            </ul>
+            <p class="mt-4 text-xs text-white/50">Configure your endpoint in the script at the bottom of this file. CORS must allow this origin on GitHub Pages.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Contact -->
       <section id="contact" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div class="max-w-2xl" data-reveal>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Get in touch</h2>
-          <p class="mt-3 text-white/70">Open to roles in ML/Backend Engineering and trading collaborations.</p>
+          <p class="mt-3 text-white/70">Open to roles in ML/Systems/Platform and trading collaborations.</p>
         </div>
         <div class="mt-8 grid lg:grid-cols-2 gap-6" data-reveal>
           <form class="rounded-3xl ring-1 ring-white/10 bg-white/5 p-6">
@@ -232,7 +281,7 @@
             </div>
             <label class="block mt-4">
               <span class="text-sm text-white/70">Message</span>
-              <textarea class="mt-1 w-full rounded-xl bg-white/10 ring-1 ring-white/10 px-3 py-2 h-28 placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/30" placeholder="Tell me about your project…" required></textarea>
+              <textarea class="mt-1 w-full rounded- xl bg-white/10 ring-1 ring-white/10 px-3 py-2 h-28 placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-white/30" placeholder="Tell me about your project…" required></textarea>
             </label>
             <div class="mt-6 flex items-center gap-3">
               <a href="mailto:your.email@example.com" class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 text-base font-semibold ring-1 ring-white/10 bg-white/10 hover:bg-white/20 shadow-glass">Send via email</a>
@@ -315,7 +364,6 @@
         if (!text) return;
         addMsg(text, 'user');
         chatInput.value = '';
-        // typing effect
         const thinking = document.createElement('div');
         thinking.className = 'flex gap-3';
         thinking.innerHTML = '<div class="shrink-0 h-7 w-7 rounded-full bg-white/10 ring-1 ring-white/10"></div><div class="max-w-[80%] rounded-2xl bg-white/10 ring-1 ring-white/10 px-3 py-2 text-white/70">…</div>';
@@ -324,8 +372,100 @@
       });
 
       clearBtn.addEventListener('click', () => { chatLog.innerHTML = '';
-        addMsg('Hi! Ask me about my background!');
+        addMsg('Hi! Ask me about my background or quant trading approach.');
       });
+
+      // ==== Clone LLM online/offline detection + chat ====
+      const API_BASE = 'https://your-llm-backend.example.com'; // <-- CHANGE ME
+      const HEALTH_PATH = '/health';
+      const CHAT_PATH = '/chat';
+      const HEALTH_TIMEOUT_MS = 3000; // Short timeout so the UI feels snappy
+      const RECHECK_INTERVAL_MS = 30000; // Re-check every 30s
+
+      const cloneStatus = document.getElementById('cloneStatus');
+      const cloneDot = document.getElementById('cloneDot');
+      const cloneLabel = document.getElementById('cloneLabel');
+      const cloneOffline = document.getElementById('cloneOffline');
+      const retryCheck = document.getElementById('retryCheck');
+      const cloneOnline = document.getElementById('cloneOnline');
+      const cloneLog = document.getElementById('cloneLog');
+      const cloneForm = document.getElementById('cloneForm');
+      const cloneInput = document.getElementById('cloneInput');
+      const clearClone = document.getElementById('clearClone');
+
+      function setCloneStatus(online) {
+        if (online) {
+          cloneDot.className = 'status-dot bg-emerald-400/90';
+          cloneLabel.textContent = 'Online';
+          cloneOffline.classList.add('hidden');
+          cloneOnline.classList.remove('hidden');
+        } else {
+          cloneDot.className = 'status-dot bg-red-400/80';
+          cloneLabel.textContent = 'Offline';
+          cloneOnline.classList.add('hidden');
+          cloneOffline.classList.remove('hidden');
+        }
+      }
+
+      async function checkServer() {
+        cloneLabel.textContent = 'Checking…';
+        try {
+          const controller = new AbortController();
+          const id = setTimeout(() => controller.abort(), HEALTH_TIMEOUT_MS);
+          const res = await fetch(API_BASE + HEALTH_PATH, { signal: controller.signal, cache: 'no-store' });
+          clearTimeout(id);
+          setCloneStatus(res.ok);
+        } catch (e) {
+          setCloneStatus(false);
+        }
+      }
+
+      function addCloneMsg(text, role='bot') {
+        const row = document.createElement('div');
+        row.className = 'flex gap-3';
+        const avatar = document.createElement('div');
+        avatar.className = 'shrink-0 h-7 w-7 rounded-full ' + (role === 'bot' ? 'bg-white/10 ring-1 ring-white/10' : 'bg-white/20 ring-1 ring-white/20');
+        const bubble = document.createElement('div');
+        bubble.className = 'max-w-[80%] rounded-2xl px-3 py-2 ring-1 ' + (role === 'bot' ? 'bg-white/10 ring-white/10' : 'bg-white/20 ring-white/20 text-white');
+        bubble.textContent = text;
+        row.appendChild(avatar); row.appendChild(bubble);
+        cloneLog.appendChild(row);
+        cloneLog.scrollTop = cloneLog.scrollHeight;
+      }
+
+      cloneForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const text = cloneInput.value.trim();
+        if (!text) return;
+        addCloneMsg(text, 'user');
+        cloneInput.value = '';
+        const thinking = document.createElement('div');
+        thinking.className = 'flex gap-3';
+        thinking.innerHTML = '<div class="shrink-0 h-7 w-7 rounded-full bg-white/10 ring-1 ring-white/10"></div><div class="max-w-[80%] rounded-2xl bg-white/10 ring-1 ring-white/10 px-3 py-2 text-white/70">…</div>';
+        cloneLog.appendChild(thinking); cloneLog.scrollTop = cloneLog.scrollHeight;
+        try {
+          const res = await fetch(API_BASE + CHAT_PATH, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text })
+          });
+          if (!res.ok) throw new Error('Bad response');
+          const data = await res.json();
+          cloneLog.removeChild(thinking);
+          addCloneMsg(data.reply || '[No reply field returned]');
+        } catch (err) {
+          cloneLog.removeChild(thinking);
+          addCloneMsg('Server went offline or error occurred. Please try again later.');
+          setCloneStatus(false); // flip UI to offline if we hit an error mid-chat
+        }
+      });
+
+      clearClone?.addEventListener('click', () => { cloneLog.innerHTML = ''; });
+      retryCheck?.addEventListener('click', checkServer);
+
+      // Kick off detection and re-check periodically
+      checkServer();
+      setInterval(checkServer, RECHECK_INTERVAL_MS);
     </script>
   </body>
 </html>
